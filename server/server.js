@@ -1,8 +1,13 @@
 const express = require('express');
 const colors = require('colors');
+const mysql=require('./models/db')
 // import morgan from 'morgan';
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
+
+const DB = require('./mysqlBD')
+
+const port=3000;
 
 const app = express(); 
 
@@ -27,7 +32,7 @@ app.use(cookieParser());
 
 const server = app.listen(3500, () => {
     const { address, port } = server.address();
-    console.log(`Listening at http://${address}:${port}`.magenta.bold);
+    console.log(`Listening at http://localhost:${port}`.magenta.bold);
   });
   
   module.exports = app;
