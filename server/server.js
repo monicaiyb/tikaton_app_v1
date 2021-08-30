@@ -1,11 +1,12 @@
 const express = require('express');
 const colors = require('colors');
-const mysql=require('./models/db')
+
 // import morgan from 'morgan';
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
-
-const DB = require('./mysqlBD')
+const mysql=require('./models/db')
+const customerRoutes=require('./routes/routes.customer')
+// imm
 
 const port=3000;
 
@@ -29,6 +30,8 @@ app.use(bodyParser.urlencoded({
 
 app.use(expressSession);
 app.use(cookieParser());
+
+app.use('/tikaton', customerRoutes);
 
 const server = app.listen(3500, () => {
     const { address, port } = server.address();

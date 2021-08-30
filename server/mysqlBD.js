@@ -1,7 +1,7 @@
 const mysql = require('mysql2');
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'user',
+  user: 'root',
   password: '12345',
   database: 'tikaton'
 });
