@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require("mysql2");
 // const dbConfig = require("../config/db.config.js");
 
 // Create a connection to the database
@@ -6,8 +6,8 @@ const mysql = require("mysql");
 const pool = mysql.createPool({
     host     : 'localhost',
     user     : 'root',
-    password : '12345',
-    // database : 'databasename'
+    password : 'password',
+    database : 'tikation'
   });
 
 // open the MySQL connection
@@ -22,18 +22,39 @@ const pool = mysql.createPool({
 //     }
 //     console.log('Close the database connection.');
 //   });
+
+// Create table
+const table = ('CREATE TABLE IF NOT EXISTS Artist (id INT(100) NOT NULL AUTO_INCREMENT, name TINYTEXT, PRIMARY KEY(id))');
+
 pool.getConnection(function(err, connection) {
     if (err) throw err; // not connected!
   
     // Use the connection
-    connection.query('SELECT something FROM sometable', function (error, results, fields) {
-      // When done with the connection, release it.
-      connection.release();
-  
-      // Handle error after the release.
-      if (error) throw error;
-  
-      // Don't use the connection here, it has been returned to the pool.
+    connection.query('CREATE DATABASE IF NOT EXISTS ??', database, function(err, results) {
+      if (err) {
+        console.log('error in creating database', err);
+        return;
+      }
+    
+      console.log('created a new database');
+    
+      connection.changeUser({
+        database : tikation
+      }, function(err) {
+        if (err) {
+          console.log('error in changing database', err);
+          return;
+        }
+    
+        connection.query(table, function(err) {
+          if (err) {
+            console.log('error in creating tables', err);
+            return;
+          }
+    
+          console.log('created a new table');
+        });
+      });
     });
   });
 
