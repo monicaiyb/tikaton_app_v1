@@ -4,11 +4,15 @@ const colors = require('colors');
 // import morgan from 'morgan';
 const bodyParser = require('body-parser')
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+dotenv.config();
+
 const mysql=require('./models/db')
 const customerRoutes=require('./routes/routes.customer')
+
 // imm
 
-const port=3000;
+const port=process.env.PORT;
 
 const app = express(); 
 
