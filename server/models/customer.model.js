@@ -3,7 +3,7 @@ const sql = require("./db.js");
 
 // constructor
 const Customer = function(customer) {
-  this.email = customer.email;
+  this.username = customer.username;
   this.name = customer.name;
   this.active = customer.active;
 };

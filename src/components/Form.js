@@ -42,12 +42,12 @@ const SignUpForm = () => {
                                         </Form.Group>
                                         <Form.Group className="mb-3 mt-6">
 
-                                            <Form.Control type="text" placeholder="Enter your phone" name="Phone" />
+                                            <Form.Control type="text" placeholder="Enter your phone" name="phone" />
 
                                         </Form.Group>
                                         <Form.Group className="mb-3 mt-6" >
                                             
-                                            <Form.Select>
+                                            <Form.Select name="department">
                                                 <option>Department</option>
                                                 <option>Production</option>
                                                 <option>Sales</option>

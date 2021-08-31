@@ -7,8 +7,9 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const mysql=require('./models/db')
-const customerRoutes=require('./routes/routes.customer')
+const mysql=require('./models/db');
+const customerRoutes=require('./routes/routes.customer');
+const userRoutes=require('./routes/userRoutes')
 
 // imm
 
@@ -36,6 +37,7 @@ app.use(expressSession);
 app.use(cookieParser());
 
 app.use('/tikaton', customerRoutes);
+app.use('/tikaton', userRoutes);
 
 const server = app.listen(3500, () => {
     const { address, port } = server.address();
