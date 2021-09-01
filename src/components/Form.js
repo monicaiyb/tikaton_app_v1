@@ -1,12 +1,45 @@
 import React from 'react'
 import { Container, Col, Row, Button, Form, Card } from 'react-bootstrap';
 
-const handleSubmit = event => {
-    event.preventDefault();
-    alert("you have submited form")
-}
+// const handleSubmit = event => {
+//     event.preventDefault();
+//     alert("you have submited form")
+// }
 
-const SignUpForm = () => {
+const SignUpForm = (event) => {
+    event.preventDefault();
+    const submitUserData = async () => {
+    const incomeEndPoint = 'http://10.0.2.2:3500/amtIncome/addIncome';
+        const data = [{
+          firstName:"",
+          lastName:"",
+          phone:"",
+          password: "",
+          username:"",
+        }]
+          fetch(incomeEndPoint, {
+            method: 'post',
+            headers:{
+                'Content-Type': 'application/json',
+               
+            },
+
+            body: JSON.stringify(data),
+          })
+          .then(res=>{
+           
+            return res.json()
+          })
+            // eslint-disable-next-line no-shadow
+            .then(data => {
+              console.log(data)
+            })  
+            
+
+      };
+  
+    
+
     return (
         <Container>
             <Row>
@@ -20,7 +53,7 @@ const SignUpForm = () => {
                                 </div></Card.Title>
                             <div className="mb-6">
 
-                                <Form onSubmit={handleSubmit}>
+                                <Form onSubmit={submitUserData}>
                                     <div>
                                         <Form.Text className="text-muted">
                                             Please sign in here
