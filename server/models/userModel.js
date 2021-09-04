@@ -3,6 +3,7 @@ const sql = require("./db.js");
 
 // constructor
 const User = function(user) {
+  
   this.firstName = user.firstName;
   this.lastName= user.lastName;
   this.username= user.username;

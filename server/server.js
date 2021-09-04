@@ -9,9 +9,10 @@ dotenv.config();
 
 const mysql=require('./models/db');
 const customerRoutes=require('./routes/routes.customer');
-const userRoutes=require('./routes/userRoutes')
+const userRoutes=require('./routes/userRoutes');
+const materialRoutes=require('./routes/materialRoutes')
 
-// imm
+// port on which the server is running
 
 const port=process.env.PORT;
 
@@ -37,7 +38,8 @@ app.use(expressSession);
 app.use(cookieParser());
 
 app.use('/tikaton', customerRoutes);
-app.use('/tikaton', userRoutes);
+app.use('/tkUser', userRoutes);
+app.use('/tkMaterial', materialRoutes);
 
 const server = app.listen(3500, () => {
     const { address, port } = server.address();
