@@ -8,20 +8,21 @@ import React from "react";
     import Contact from '../src/screens/contact';
     import SignUp from '../src/screens/signup';
     import SignIn from '../src/screens/signin';
-
+    import Material from '../src/screens/Material'
 
     
     
     function App() {
       return (
         <Router>
-          <Navbar />
+          
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
             <Route path="/signin" component={SignIn} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/material" component={Material}/>
           </Switch>
         </Router>
       );

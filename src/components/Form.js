@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { Container, Col, Row, Button, Form, Card } from "react-bootstrap";
 
 const SignUpForm = () => {
+  
   const [firstName, setFirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [username, setUsername] = useState("");
@@ -10,27 +11,28 @@ const SignUpForm = () => {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (event) => {
-    // event.preventDefault();
-    // const {firstName, username, lastName, phone, password } = event.target.elements
-    console.log(firstName);
-
-    // const data=[]
-    //     const userEndPoint = 'http://10.0.2.2:3500/tikaton/users';
-    //     fetch(userEndPoint, {
-    //         method: 'post',
-    //         headers:{
-    //             'Content-Type': 'application/json',
-    //         },
-    //         body: JSON.stringify(data),
-    //       })
-    //       .then(res=>{
-    //         return res.json()
-    //       })
-    // eslint-disable-next-line no-shadow
-    // .then(data => {
-    //   console.log(data)
-    // })
+  
+    console.log({firstName,username,lastName, phone,department, password});
   };
+
+  useEffect(() => {
+    const userEndPoint='http://localhost:5000/tkUser/users'
+    fetch(userEndPoint, {
+              method: 'post',
+              headers:{
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(),
+            })
+            .then(res=>{
+              return res.json()
+            })
+      
+      .then(data => {
+        console.log(data)
+      })
+  }, [])  
+
   return (
     <Container>
       <Row>
@@ -44,7 +46,7 @@ const SignUpForm = () => {
                 </div>
               </Card.Title>
               <div className="mb-6">
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit}method="POST" action="/material">
                   <div>
                     <Form.Text className="text-muted">
                       Please sign in here
