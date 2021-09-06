@@ -10,13 +10,18 @@ const SignUpForm = () => {
   const [department, setDepartment] = useState("");
   const [password, setPassword] = useState("");
 
+
   const handleSubmit = (event) => {
-  
+   
     console.log({firstName,username,lastName, phone,department, password});
+    
   };
 
   useEffect(() => {
     const userEndPoint='http://localhost:5000/tkUser/users'
+    const submit=()=>{    
+    
+    
     fetch(userEndPoint, {
               method: 'post',
               headers:{
@@ -29,8 +34,10 @@ const SignUpForm = () => {
             })
       
       .then(data => {
-        console.log(data)
-      })
+        const form=data;
+        console.log(form)
+      })}
+submit()
   }, [])  
 
   return (

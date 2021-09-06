@@ -8,8 +8,8 @@ const User = function(user) {
   this.lastName= user.lastName;
   this.username= user.username;
   this.phone= user.phone;
-this.department= user.department;
-  this.password= user.password;
+  this.department= user.department;
+  this.user_password= user.user_password;
   };
 
 User.create = (newuser, result) => {

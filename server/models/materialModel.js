@@ -1,9 +1,9 @@
 const sql = require("./db.js");
 
 
-// constructor
+  // constructor
 const Material = function(material) {
-  this.materialName = materialName;
+  this.materialName = material.materialName;
   this.quantity= material.quantity
   this.unitCost= material.unitCost;
   this.rate= material.rate;
