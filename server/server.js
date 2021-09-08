@@ -1,8 +1,9 @@
+const bodyParser = require('body-parser')
 const express = require('express');
 const colors = require('colors');
 
 // import morgan from 'morgan';
-const bodyParser = require('body-parser')
+
 const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const cors=require('cors')

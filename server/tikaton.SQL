@@ -5,7 +5,7 @@ create table if not exists users(
     username varchar(40)not null,
     phone int(20)not null,
     department varchar(20)not null,
-    user_password varchar(80) not null    
+    user_password varchar(80)not null   
 );
 create table if not exists materials(
     id int primary key auto_increment,

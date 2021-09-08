@@ -16,7 +16,7 @@ exports.create = (req, res) => {
         username: req.body.username,
         phone: req.body.phone,
         department: req.body.department,
-        password:req.body.password
+        user_password:req.body.user_password
         
       });
     
