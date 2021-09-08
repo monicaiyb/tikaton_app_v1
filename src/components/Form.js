@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from "react";
-import { Container, Col, Row, Button, Form, Card } from "react-bootstrap";
-import {
-  BrowserRouter as 
-  
-  useHistory,
-  
-} from "react-router-dom";
-
+import React, { useState,  } from "react";
+import { Container, Col, Row, Button, Form, Card,InputGroup } from "react-bootstrap";
+import {useHistory,} from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faIdBadge, faLock, faPhone, faSitemap, faUser,} from "@fortawesome/free-solid-svg-icons";
 
 const SignUpForm = () => {
   
@@ -25,6 +21,8 @@ const SignUpForm = () => {
     'department':department, 
     'user_password':user_password
   }
+
+  let history = useHistory();
 
   // const [Details, setUserDetails] = useState("");
   const handleSubmit = (event) => {
@@ -48,16 +46,13 @@ const SignUpForm = () => {
 
 .then(data=> {
 console.log(data)
+
 })
 
-}
-let history = useHistory(); 
-      
+history.push("/signin");
+}   
     
-    
-  
-
-  return (
+ return (
     <Container>
       <Row>
         <Col></Col>
@@ -70,12 +65,14 @@ let history = useHistory();
                 </div>
               </Card.Title>
               <div className="mb-6">
-                <Form onSubmit={handleSubmit} method="POST" action="/signup">
+                <Form onSubmit={handleSubmit} method="POST" action="/signin">
                   <div>
                     <Form.Text className="text-muted">
                       Please sign in here
                     </Form.Text>
-                    <Form.Group className="mb-3 mt-6">
+                    <InputGroup className="mb-3 mt-6">
+                      <InputGroup.Text><FontAwesomeIcon icon={faIdBadge} /></InputGroup.Text>
+                    
                       <Form.Control
                         type="text"
                         placeholder="Enter the first name"
@@ -83,8 +80,9 @@ let history = useHistory();
                         value={firstName}
                         onChange={(event) => setFirstName(event.target.value)}
                       />
-                    </Form.Group>
-                    <Form.Group className="mb-3 mt-6">
+                    </InputGroup>
+                    <InputGroup className="mb-3 mt-6">
+                    <InputGroup.Text><FontAwesomeIcon icon={faIdBadge} /></InputGroup.Text>
                       <Form.Control
                         type="text"
                         placeholder="Enter the Last name"
@@ -93,8 +91,9 @@ let history = useHistory();
                         onChange={(event) => setlastName(event.target.value)}
                        
                       />
-                    </Form.Group>
-                    <Form.Group className="mb-3 mt-6">
+                    </InputGroup>
+                    <InputGroup className="mb-3 mt-6">
+                    <InputGroup.Text><FontAwesomeIcon icon={faUser} /></InputGroup.Text>
                       <Form.Control
                         type="text"
                         placeholder="Enter a username"
@@ -102,8 +101,9 @@ let history = useHistory();
                         value={username}
                         onChange={(event) => setUsername(event.target.value)}
                       />
-                    </Form.Group>
-                    <Form.Group className="mb-3 mt-6">
+                    </InputGroup>
+                    <InputGroup className="mb-3 mt-6">
+                    <InputGroup.Text><FontAwesomeIcon icon={faPhone} /></InputGroup.Text>
                       <Form.Control
                         type="text"
                         placeholder="Enter your phone"
@@ -111,20 +111,23 @@ let history = useHistory();
                         value={phone}
                         onChange={(event) => setPhone(event.target.value)}
                       />
-                    </Form.Group>
-                    <Form.Group className="mb-3 mt-6">
+                    </InputGroup>
+                    <InputGroup className="mb-3 mt-6">
+                    <InputGroup.Text><FontAwesomeIcon icon={faSitemap} /></InputGroup.Text>
                       <Form.Select name="department" value={department}
+                      placeholder="Enter your phone"
                         onChange={(event) => setDepartment(event.target.value)}
                         >
-                        <option>Department</option>
+                        <option selected>Department</option>
                         <option>Production</option>
                         <option>Sales</option>
                         <option>Administrator</option>
-                        <option></option>
+                        <option>Hr</option>
                       </Form.Select>
-                    </Form.Group>
+                    </InputGroup>
 
-                    <Form.Group className="mb-3" >
+                    <InputGroup className="mb-3" >
+                    <InputGroup.Text><FontAwesomeIcon icon={faLock} /></InputGroup.Text>
                       <Form.Control
                         type="password"
                         placeholder="Enter the Password"
@@ -132,7 +135,7 @@ let history = useHistory();
                         value={user_password}
                         onChange={(event) => setPassword(event.target.value)}
                       />
-                    </Form.Group>
+                    </InputGroup>
                   </div>
                   <div className="d-grid gap-2">
                     <Button type="submit" variant="primary" name="submit">
