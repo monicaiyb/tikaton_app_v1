@@ -1,5 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Col, Row, Button, Form, Card } from "react-bootstrap";
+import {
+  BrowserRouter as 
+  
+  useHistory,
+  
+} from "react-router-dom";
+
 
 const SignUpForm = () => {
   
@@ -8,37 +15,47 @@ const SignUpForm = () => {
   const [username, setUsername] = useState("");
   const [phone, setPhone] = useState("");
   const [department, setDepartment] = useState("");
-  const [password, setPassword] = useState("");
+  const [user_password, setPassword] = useState("");
 
+  const userDetails={
+    'firstName':firstName,
+    'lastName':lastName,
+    'username':username,
+    'phone':phone,
+    'department':department, 
+    'user_password':user_password
+  }
 
+  // const [Details, setUserDetails] = useState("");
   const handleSubmit = (event) => {
-   
-    console.log({firstName,username,lastName, phone,department, password});
-    
-  };
-
-  useEffect(() => {
-    const userEndPoint='http://localhost:5000/tkUser/users'
-    const submit=()=>{    
-    
+    event.preventDefault()
+  
+    // setUserDetails({...userDetails})
+    console.log(userDetails);
+    const userEndPoint='http://localhost:8000/tkUser/users'
     
     fetch(userEndPoint, {
-              method: 'post',
-              headers:{
-                  'Content-Type': 'application/json',
-              },
-              body: JSON.stringify(),
-            })
-            .then(res=>{
-              return res.json()
-            })
+      method: 'post',
+      headers:{
+          'Content-Type': 'application/json',
+          // 'Content-Type':'application/x-www-form-urlencoded'
+      },
+      body: JSON.stringify(userDetails),
+    })
+    .then(res=>{
+      return res.json()
+    })
+
+.then(data=> {
+console.log(data)
+})
+
+}
+let history = useHistory(); 
       
-      .then(data => {
-        const form=data;
-        console.log(form)
-      })}
-submit()
-  }, [])  
+    
+    
+  
 
   return (
     <Container>
@@ -53,7 +70,7 @@ submit()
                 </div>
               </Card.Title>
               <div className="mb-6">
-                <Form onSubmit={handleSubmit}method="POST" action="/material">
+                <Form onSubmit={handleSubmit} method="POST" action="/signup">
                   <div>
                     <Form.Text className="text-muted">
                       Please sign in here
@@ -111,8 +128,8 @@ submit()
                       <Form.Control
                         type="password"
                         placeholder="Enter the Password"
-                        name="password"
-                        value={password}
+                        name="user_password"
+                        value={user_password}
                         onChange={(event) => setPassword(event.target.value)}
                       />
                     </Form.Group>
