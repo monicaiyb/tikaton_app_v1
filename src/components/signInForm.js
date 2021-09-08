@@ -1,5 +1,8 @@
 import React from "react";
-import { Container, Col, Row, Button, Form, Card } from 'react-bootstrap';
+import { Container, Col, Row, Button, Form, Card, InputGroup } from 'react-bootstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faLock, faUser,} from "@fortawesome/free-solid-svg-icons";
+
 
 export default function SignInForm() {
   //  handle submit
@@ -24,16 +27,16 @@ export default function SignInForm() {
                   <Form.Text className="text-muted">
                         Please sign in here
                       </Form.Text>
-                    <Form.Group className="mb-3 mt-6" controlId="formBasicEmail">
-                      <Form.Label>Username</Form.Label>
+                    <InputGroup className="mb-3 mt-6" controlId="formBasicEmail">
+                    <InputGroup.Text><FontAwesomeIcon icon={faUser} /></InputGroup.Text>
                       <Form.Control type="email" placeholder="Enter your username" name="email"/>
                       
-                    </Form.Group>
+                    </InputGroup>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                      <Form.Label>Password</Form.Label>
+                    <InputGroup className="mb-3" controlId="formBasicPassword">
+                    <InputGroup.Text><FontAwesomeIcon icon={faLock} /></InputGroup.Text>
                       <Form.Control type="password" placeholder="Enter Password" name="password"/>
-                    </Form.Group>
+                    </InputGroup>
                    
                   </div>
                   <div className="d-grid gap-2">
