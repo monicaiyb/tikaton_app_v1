@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 import {Row,Col} from "react-bootstrap";
 import { Navigation } from "react-minimal-side-navigation";
 import "react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css";
@@ -9,23 +9,36 @@ import {
   faUser,
  
 } from "@fortawesome/free-solid-svg-icons";
+// import {useHistory,useLocation} from "react-router-dom";
+// Import components here
 
 
-function Sidenav() {
+const Adminstrator = ({history, location}) => {
+  // let history = useHistory();
+  // let location= useLocation();
   return (
+ 
     <div>
       <Row>
-        <Col>
+        <Col lg={2} className="d-flex">
         <h3>Tikaton</h3>
         </Col>
       </Row>
       <Row>
-        <Col>
+        <Col lg={2} className="d-flex">
         <Navigation
         // you can use your own router's api to get pathname
-        activeItemId="'/materials/Lists'"
-        onSelect={({ itemId }) => {
-          // maybe push to the route
+        // activeItemId="'/materials/Lists'"
+        // onSelect={({ itemId }) => {
+        //   // maybe push to the route
+        // }}
+
+        // Add paths
+        activeItemId={location.title}
+        onChange={({event, item}) => {
+          // prevent page reload
+          event.preventDefault();
+          history.push(item.itemId);
         }}
         items={[
           {
@@ -37,19 +50,19 @@ function Sidenav() {
           },
           {
             title: "Material",
-            itemId: "/materials",
+            itemId: "/material",
             elemBefore: () => <FontAwesomeIcon name="users" icon={faUser} />,
             subNav: [
               {
-                title: "New Materials",
+                title: "Add",
                 itemId: "/materials/AddNew",
               },
               {
-                title: "Material List",
+                title: "List",
                 itemId: "/materials/Lists",
               },
               {
-                title: "Material History",
+                title: "History",
                 itemId: "/materials/History",
               },
             ],
@@ -122,9 +135,12 @@ function Sidenav() {
         ]}
       />
         </Col>
+        <Col>hello</Col>
+
       </Row>
      
     </div>
   );
 }
-export default Sidenav;
+
+export default Adminstrator

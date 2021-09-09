@@ -49,7 +49,7 @@ console.log(data)
 
 })
 
-history.push("/material");
+history.push("/signin");
 }   
     
  return (
@@ -65,7 +65,7 @@ history.push("/material");
                 </div>
               </Card.Title>
               <div className="mb-6">
-                <Form onSubmit={handleSubmit} method="POST" action="/material">
+                <Form onSubmit={handleSubmit} method="POST" action="/signin">
                   <div>
                     <Form.Text className="text-muted">
                       Please sign in here
