@@ -18,7 +18,8 @@ const Adminstrator = ({history, location}) => {
   // let location= useLocation();
   return (
  
-    <div>
+    <div >
+      <div className='side-menu'>
       <Row>
         <Col lg={2} className="d-flex">
         <h3>Tikaton</h3>
@@ -42,8 +43,8 @@ const Adminstrator = ({history, location}) => {
         }}
         items={[
           {
-            title: "Home",
-            itemId: "/dashHome",
+            title: "Dashboard",
+            itemId: "/dash",
             // you can use your own custom Icon component as well
             // icon is optional
             elemBefore: () => <FontAwesomeIcon name="inbox" icon={faHome} />,
@@ -135,10 +136,11 @@ const Adminstrator = ({history, location}) => {
         ]}
       />
         </Col>
-        <Col>hello</Col>
+        
 
       </Row>
-     
+      </div>
+
     </div>
   );
 }

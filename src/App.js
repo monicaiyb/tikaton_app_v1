@@ -3,20 +3,24 @@ import React from "react";
     import './App.css';
     // import Navbar from "../src/components/Navbar";
     import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
-    import Home from '../src/screens/admin';
+    import Home from '../src/screens/Home';
     import About from '../src/screens/about';
     import Contact from '../src/screens/contact';
     import SignUp from '../src/screens/signup';
     import SignIn from '../src/screens/signin';
     import Material from '../src/screens/Material'
-
+    
     import Admin from '../src/screens/admin'
+    // import components
+    import Dashboard from '../src/components/material/Dashboard';
+
 
     function App() {
       return (
         <Router>
           
           <Switch>
+          <Route>
             <Route path="/" exact component={Home} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
@@ -24,9 +28,9 @@ import React from "react";
             <Route path="/signup" component={SignUp} />
             <Route path="/adminstrator" component={Admin}/>
             <Route path="/material" component={Material}/>
-            <Route path="/admin" component={Admin}>
-           
-            </Route>
+            <Route path="/admin" component={Admin}/>
+            <Route path="/material/dash" component={Dashboard}><Dashboard/></Route>
+          </Route>
 
 
           </Switch>
