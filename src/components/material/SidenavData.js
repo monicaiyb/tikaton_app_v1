@@ -1,7 +1,12 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
+  faCashRegister,
   faHome,
+  
+  faLandmark,
+  
+  faShuttleVan,
   
   faUser,
  
@@ -10,34 +15,35 @@ import {
 const SideData = [
         {
           title: "Dashboard",
-          itemId: "/materials/dash",
+          icon:<FontAwesomeIcon name="users" icon={faHome}/>,
+          itemId: "/admin/dash",
           // you can use your own custom Icon component as well
           // icon is optional
-          elemBefore: () => <FontAwesomeIcon name="inbox" icon={faHome} />,
         },
         {
           title: "Material",
-          itemId: "/material",
-          elemBefore: () => <FontAwesomeIcon name="users" icon={faUser} />,
+          icon:<FontAwesomeIcon name="users" icon={faUser}/>,
+          itemId: "/admin/material",
           subNav: [
             {
-              title: "New Materials",
-              itemId: "/materials/AddNew",
+              title: "Add New",
+              itemId: "admin/material/AddNew",
             },
             {
-              title: "Material List",
-              itemId: "/materials/Lists",
+              title: "List",
+              itemId: "admin/material/Lists",
             },
             {
-              title: "Material History",
+              title: "History",
               itemId: "/materials/History",
             },
           ],
         },
         {
           title: "Products",
+          icon:<FontAwesomeIcon name="users" icon={faUser} />,
           itemId: "/products",
-          elemBefore: () => <FontAwesomeIcon name="users" icon={faUser} />,
+          
           subNav: [
             {
               title: "New Products",
@@ -55,8 +61,9 @@ const SideData = [
         },
         {
           title: "Supplier",
+          icon:<FontAwesomeIcon name="users" icon={faShuttleVan} />,
           itemId: "/suppliers",
-          elemBefore: () => <FontAwesomeIcon name="users" icon={faUser} />,
+          
           subNav: [
             {
               title: "New Products",
@@ -71,6 +78,7 @@ const SideData = [
         },
         {
           title: "Sales",
+          icon:<FontAwesomeIcon name="users" icon={faCashRegister} />,
           itemId: "/sales",
           subNav: [
             {
@@ -86,6 +94,7 @@ const SideData = [
         },
         {
           title: "Location",
+          icon:<FontAwesomeIcon name="users" icon={faLandmark} />,
           itemId: "/location",
           subNav: [
             {

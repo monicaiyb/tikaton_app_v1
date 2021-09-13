@@ -12,15 +12,26 @@ const Sidebar2 = () => {
         </div>          
       </div>
       <div className="bottom-menu">
-      <ul>
+      <ul className="side-bar-list">
           {SideBarData.map((val,key)=>{
               return(
-                <li key={key}onClick={()=>{
+                <li key={key}
+                className="side-bar-list-item"
+                id={window.location.pathname===val.link ? "active":""}
+                onClick={()=>{
                     window.location.pathname=val.itemId
                 }}>
-                    {""}
-                    <div>{val.elemBefore}</div>
-                    <div>{val.title}</div>
+                    
+                    <div id="icon">{val.icon}</div>
+                    <div id="title">{val.title}</div>
+                {Array.isArray(subNav) ? (
+                {subNav.map((subItem) => (
+                  <li key={subItem.name} button>
+                    <div className="sidebar-item-text">
+                      {subItem.label}
+                    </div>
+                  </li>
+                ))}
                 </li>
               )
           })

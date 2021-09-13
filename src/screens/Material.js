@@ -1,27 +1,18 @@
 import React from "react";
 
 import {
-  Breadcrumb,
-  Button,
-  ButtonGroup,
   Row,
-  Col,
-  InputGroup,
-  Form,
-  Dropdown,
-  Card,
-  Table,
- 
+  Col, 
 } from "react-bootstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faPlus,
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import {
+//   faHome,
+//   faPlus,
  
-  faCheck,
-  faSearch,
-  faSlidersH,
-} from "@fortawesome/free-solid-svg-icons";
+//   faCheck,
+//   faSearch,
+//   faSlidersH,
+// } from "@fortawesome/free-solid-svg-icons";
 
 import Sidebar2 from "../components/sidebar";
 

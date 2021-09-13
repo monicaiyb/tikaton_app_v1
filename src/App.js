@@ -29,7 +29,7 @@ import React from "react";
             <Route path="/adminstrator" component={Admin}/>
             <Route path="/material" component={Material}/>
             <Route path="/admin" component={Admin}/>
-            <Route path="/material/dash" component={Dashboard}><Dashboard/></Route>
+            <Route path="/admin/dash" component={Dashboard}/>
           </Route>
 
 
