@@ -13,17 +13,18 @@ import {
 //   faSearch,
 //   faSlidersH,
 // } from "@fortawesome/free-solid-svg-icons";
-
+// import { BrowserRouter as Switch, Route,} from "react-router-dom";
 import Sidebar2 from "../components/sidebar";
-
+// import Dashboard from "../components/material/Dashboard"
+// import Dashboard1 from "../components/material/Dashboard"
 function Materials() {
   return (
     <div>
       <Row>
-        <Col  lg={2} className="d-flex">
+        <Col className="side-menu">
         <Sidebar2/>
         </Col>
-        <Col>
+        <Col className="">
         
           </Col>
       </Row>

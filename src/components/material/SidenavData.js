@@ -3,13 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCashRegister,
   faHome,
-  
   faLandmark,
-  
   faShuttleVan,
-  
   faUser,
- 
 } from "@fortawesome/free-solid-svg-icons";
 
 const SideData = [

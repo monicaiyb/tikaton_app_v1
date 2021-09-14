@@ -5,7 +5,7 @@ import SideBarData  from '../components/material/SidenavData';
 
 const Sidebar2 = () => {
   return (
-    <div className="side-menu">
+    <div className="">
       <div className="top-menu">
         <div className="logo">
           <h3>Tikaton</h3>
@@ -24,14 +24,19 @@ const Sidebar2 = () => {
                     
                     <div id="icon">{val.icon}</div>
                     <div id="title">{val.title}</div>
-                {Array.isArray(subNav) ? (
-                {subNav.map((subItem) => (
-                  <li key={subItem.name} button>
-                    <div className="sidebar-item-text">
-                      {subItem.label}
-                    </div>
-                  </li>
-                ))}
+                    {/* ,{subNav.map(()=>{return(
+                        <li key={key}
+                        onClick={()=>{
+                          window.location.pathname=val.itemId}}
+                        >
+                          <div className="sidebar-item-text">
+                            {val.title}
+                          </div>
+                        </li>
+                    )
+                  
+                  })
+                  } */}
                 </li>
               )
           })

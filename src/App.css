@@ -9,48 +9,41 @@
 
 
 body{
+
   margin: 0;
   padding: auto 0;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.side-menu{
-  position: fixed;
+.dashboard{
+  width: 100vw;
+  height: 100vh;
+  padding:10px;
+  background-color: #13C4A3;
+  display: flex;
+  flex-direction: row;
+  
+}
+.dashboard .side-menu{
+  /* position: absolute; */
   background-color: #DBCDCD;
   width: 200px;
-  height: 1500px;
+  height: 550px;
   box-sizing: border-box;
-  padding:10px 10px 10px 10px;
+  margin:  5px 10px 5px 10px;
+  }
 
-}
-.side-menu.top-menu {
-  position: relative;
-  align-items: center;
-}
-.side-menu .top-menu .logo{
-  width: 180px;
-  height: 40px;
-  margin: 4%;
-}
 
-.side-menu .top-menu .toggle-button{
-   font-size: 20px;
-  position: relative;
- 
-}
-
-.side-menu .bottom-menu{
+.dashboard .side-menu .bottom-menu{
   width: 100%;
   height: 100%;
 }
-.side-bar-list{
+.dashboard .side-menu .bottom-menu .side-bar-list{
   height: auto;
   padding: 0;
   width: 100%;
 
 }
-.side-bar-list .side-bar-list-item #active{
-  background-color: blanchedalmond;
-}
+
 .side-bar-list .side-bar-list-item{
   width: 100%;
   height: 60%;
@@ -71,9 +64,20 @@ body{
 
 }
 .side-bar-list-item #title{
-  flex: 80%;
+  flex: 70%;
+  display: grid;
 }
 .side-bar-list-item:hover{
   cursor: pointer;
   background-color: blanchedalmond;
+}
+.side-bar-list .side-bar-list-item #active{
+  background-color: blanchedalmond;
+}
+
+.dashboard .data-display{
+  /* position: fixed; */
+  background-color: #fff;
+  margin:  5px 10px 5px 10px;
+  
 }
