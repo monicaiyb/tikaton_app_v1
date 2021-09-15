@@ -29,8 +29,8 @@ import React from "react";
             <Route path="/adminstrator" component={Admin}/>
             <Route path="/material" component={Material}/>
             <Route path="/admin" component={Admin} exact/>
-            {/* <Route path="/admin/dash" component={Dashboard}/>
-            <Route path="/admin/dash1" component={Dashboard1}/> */}
+            <Route path="/admin/dash" component={Dashboard}/>
+            <Route path="/admin/dash1" component={Dashboard1}/>
            
           </Route>
 

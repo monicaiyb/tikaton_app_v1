@@ -14,9 +14,7 @@ import {
   } from "react-bootstrap";
   import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
   import {
-    faHome,
     faPlus,
-   
     faCheck,
     faSearch,
     faSlidersH,
@@ -35,9 +33,7 @@ const adminDash = () => {
                   className: "breadcrumb-dark breadcrumb-transparent",
                 }}
               >
-                <Breadcrumb.Item>
-                  <FontAwesomeIcon icon={faHome} />
-                </Breadcrumb.Item>
+                
                 <Breadcrumb.Item>Materials</Breadcrumb.Item>
                 <Breadcrumb.Item active>Materials List</Breadcrumb.Item>
               </Breadcrumb>

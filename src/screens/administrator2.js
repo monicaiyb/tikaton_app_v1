@@ -1,9 +1,9 @@
 import React from "react";
 
-import {
-  Row,
-  Col, 
-} from "react-bootstrap";
+// import {
+//   Row,
+//   Col, 
+// } from "react-bootstrap";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import {
 //   faHome,
@@ -13,28 +13,25 @@ import {
 //   faSearch,
 //   faSlidersH,
 // } from "@fortawesome/free-solid-svg-icons";
-import { BrowserRouter as Router, Switch, Route,} from "react-router-dom";
+
 import Sidebar2 from "../components/sidebar";
 import Dashboard from "../components/material/Dashboard"
-import Dashboard1 from "../components/material/dashnew"
+import Dashboard1 from "../components/material/dashnew";
+import AddMaterialForm from "../components/dashboard/AddMaterialForm";
+
 function Adminstrator() {
   return (
     <div className="dashboard">
-      <Row>
-        <Col   className="side-menu" sm={4}>
+      
+        <div   className="side-menu">
+            
         <Sidebar2/>
-        </Col>
-        <Col className="data-display" sm={8}>
-        {/* <Dashboard/> 
-        <Router>
-        <Switch>
-         <Route path={"admin/dash"} component={Dashboard}/>
-         <Route path={"admin/dash1"} component={Dashboard1}/>
-        </Switch>
-        </Router> */}
-            {/* <Dashboard/> */}
-          </Col>
-      </Row>
+        </div >
+        <div className="data-display">
+        {/* <Dashboard1/> */}
+        <AddMaterialForm />
+          </div >
+      
     </div>
   );
 }
